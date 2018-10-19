@@ -1,0 +1,15 @@
+<ActionBar title="Home" class="action-bar"></ActionBar>
+
+<DockLayout *ngIf="!isUserLoggedIn" class="main" stretchLastChild="true">
+	<Image dock="top" class="img" src="https://www.flowacademy.hu/wp-content/uploads/2017/06/rsz_1rsz_flowy_feher.png"></Image>
+	<StackLayout class="button">
+			<TextField class="textfield" [(ngModel)]="email" hint="E-mail"></TextField>
+			<TextField secure="true" class="textfield" [(ngModel)]="password" hint="Jelszó"></TextField>
+			<Button class="btn" text="Bejelentkezés" (tap)="onButtonTap()"></Button>
+	</StackLayout>
+</DockLayout>
+
+<DockLayout *ngIf="isUserLoggedIn" class="main" stretchLastChild="true">
+	<Image dock="top" class="img" src="https://www.flowacademy.hu/wp-content/uploads/2017/06/rsz_1rsz_flowy_feher.png"></Image>
+	<Button class="btn" text="Check-in!" (tap)="onButtonTap2()"></Button>
+</DockLayout>
